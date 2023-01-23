@@ -1,0 +1,21 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "Blog_APP",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd api && yarn  && cd ../frontend && yarn && yarn start",
+    "start": "node api/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohamdAhmd/Blog_App.git"
+  },
+  "author": "Mohamed saber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohamdAhmd/Blog_App/issues"
+  },
+  "homepage": "https://github.com/MohamdAhmd/Blog_App#readme"
+}
