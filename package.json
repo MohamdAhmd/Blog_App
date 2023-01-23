@@ -4,7 +4,7 @@
   "description": "Blog_APP",
   "main": "index.js",
   "scripts": {
-    "build": "cd api && yarn  && cd ../frontend && yarn && yarn start",
+    "build": "cd api && yarn  && cd ../client && yarn && yarn start",
     "start": "node api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
