@@ -12,6 +12,7 @@ const path = require("path");
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
+app.use(express.static(path.join(__dirname, "../client/build")));
 const MONGO_URL =
   "mongodb+srv://blogapp:blogapp@cluster0.ruf5zlc.mongodb.net/blog?retryWrites=true&w=majority";
 mongoose
@@ -32,7 +33,9 @@ const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
 });
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
