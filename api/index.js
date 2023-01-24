@@ -12,15 +12,11 @@ const path = require("path");
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-const MONGO_URL =
+/*const MONGO_URL =
   "mongodb+srv://blogapp:blogapp@cluster0.ruf5zlc.mongodb.net/blog?retryWrites=true&w=majority";
+  */
 mongoose
-  .connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: true,
-  })
+  .connect(process.env.MONGO_URL)
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
